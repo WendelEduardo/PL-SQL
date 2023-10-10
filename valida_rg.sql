@@ -1,4 +1,12 @@
 create or replace function valida_rg( v_rg varchar2 )
+
+/*
+RM 87896 Cristian Dias Rossmann Martinelli
+RM 89291 Fabio Fernando de Souza 
+RM 89355 Wendel Eduardo Mendes Genuino
+RM 88865 Diogo Osorio
+*/
+
 RETURN VARCHAR2 IS 
     v_digentrada char(30) := substr(v_rg, 9, 10); 
     v_rg_sem_dv char(30) := substr(v_rg, 1, 8); 

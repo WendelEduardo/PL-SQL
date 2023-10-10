@@ -1,4 +1,12 @@
 create or replace function valida_titulo_eletor (v_titulo varchar2)
+
+/*
+RM 87896 Cristian Dias Rossmann Martinelli
+RM 89291 Fabio Fernando de Souza 
+RM 89355 Wendel Eduardo Mendes Genuino
+RM 88865 Diogo Osorio
+*/
+
 return varchar2 is
     v_sequencial varchar2(20) := SUBSTR(v_titulo, 1, length(v_titulo) - 4);
     v_uf varchar2(2) := SUBSTR(v_titulo, length(v_titulo) - 3, 2);
@@ -62,14 +70,14 @@ begin
     v_dv_cal := v_dv_cal || v_aux;
     
     if(v_dv = v_dv_cal) then
-        return 'Titulo de Eleitor Válido';
+        return 'Titulo de Eleitor Vï¿½lido';
     else
-        return 'Titulo de Eleitor Inválido';
+        return 'Titulo de Eleitor Invï¿½lido';
     end if;
     
 EXCEPTION 
    WHEN e_titulo_invalido THEN
-   return 'Titulo de eleitor inválido. O titulo de eleitor deve conter no maximo 12 dígitos';
+   return 'Titulo de eleitor invï¿½lido. O titulo de eleitor deve conter no maximo 12 dï¿½gitos';
 end;
 /
 
